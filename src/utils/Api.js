@@ -60,7 +60,7 @@ class Api {
             method: 'DELETE',
             headers: this._headers
         })
-            .then(this._sendRequest)
+           /* .then(this._sendRequest) */
     }
 
     addlike(id) {
