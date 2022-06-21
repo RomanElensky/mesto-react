@@ -24,12 +24,12 @@ function Card({ card, onCardClick, onCardLike, onCardDelete }) {
   }
 
   const cardDeleteButtonClassName = (
-    `card__trash-button ${isOwn ? '' : 'card__trash-button_active'}`
+    `card__trash-button ${isOwn ? 'card__trash-button_active' : 'card__trash-button_hidden'}`
   );
 
   return (
-    <article key={card._id} className="card__element" onClick={handleCardClick}>
-      <img src={card.link} alt={card.name} className="card__image" />
+    <article key={card._id} className="card__element">
+      <img src={card.link} alt={card.name} className="card__image" onClick={handleCardClick}/>
       <button onClick={handleDeleteClick} className={cardDeleteButtonClassName}></button>
       <div className="card__description">
         <h2 className="card__name">{card.name}</h2>

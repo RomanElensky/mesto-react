@@ -12,24 +12,24 @@ class Api {
             .then(this._sendRequest)
     }
 
-    patchInfo(info) {
+    patchInfo(name, about) {
         return fetch(`${this._baseUrl}/users/me`, {
             method: 'PATCH',
             headers: this._headers,
             body: JSON.stringify({
-                name: info.profile_name,
-                about: info.profile_info
+                name,
+                about
             })
         })
             .then(this._sendRequest)
     }
 
-    patchAvatar(avatarInfo) {
+    patchAvatar({avatar}) {
         return fetch(`${this._baseUrl}/users/me/avatar`, {
             method: 'PATCH',
             headers: this._headers,
             body: JSON.stringify({
-                avatar: avatarInfo.avatar_link
+                avatar
             })
         })
             .then(this._sendRequest)
@@ -43,13 +43,13 @@ class Api {
             .then(this._sendRequest)
     }
 
-    postCard(cardInfo) {
+    postCard(name, link) {
         return fetch(`${this._baseUrl}/cards`, {
             method: 'POST',
             headers: this._headers,
             body: JSON.stringify({
-                name: cardInfo.name,
-                link: cardInfo.link
+                name,
+                link
             })
         })
             .then(this._sendRequest)

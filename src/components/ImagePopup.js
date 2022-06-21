@@ -1,5 +1,5 @@
-function ImagePopup({card, onClose}) {
-    return(
+function ImagePopup({ card, onClose }) {
+    return (
         <div className={`popup popup_type_image ${card ? 'popup_opened' : ''}`}>
             <div className="popup__image-container">
                 <button onClick={onClose} className="popup__close-button"></button>
